@@ -261,6 +261,8 @@ function populateConstructorExports (exports, codes, HttpError) {
   })
 
   // backwards-compatibility
-  exports["I'mateapot"] = deprecate.function(exports.ImATeapot,
-    '"I\'mateapot"; use "ImATeapot" instead')
+  if (exports.ImATeapot) {
+    exports["I'mateapot"] = deprecate.function(exports.ImATeapot,
+      '"I\'mateapot"; use "ImATeapot" instead')
+  }
 }
